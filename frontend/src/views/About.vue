@@ -10,10 +10,10 @@ import { Info, Calculator, Lightbulb, Home as HomeIcon } from 'lucide-vue-next'
         <span>O projektu</span>
       </div>
       <p class="text-3xl font-light tracking-tight leading-tight max-w-2xl text-gray-900">
-        Kako delujejo naši <span class="italic font-normal">izračuni?</span>
+        Kako delujejo <span class="italic font-normal">izračuni?</span>
       </p>
       <p class="text-lg text-gray-500 max-w-2xl leading-relaxed">
-        Namen tega kalkulatorja je ponuditi poenostavljeno primerjavo med dvema najbolj priljubljenima oblikama dolgoročnega investiranja v Sloveniji.
+        Namen tega kalkulatorja je ponuditi poenostavljeno primerjavo med dvema najbolj priljubljenima oblikama dolgoročnega investiranja v Sloveniji:
       </p>
     </section>
 
@@ -27,7 +27,7 @@ import { Info, Calculator, Lightbulb, Home as HomeIcon } from 'lucide-vue-next'
           <h3 class="text-xl font-medium text-gray-900">ETF (S&P 500)</h3>
         </div>
         <p class="text-gray-500 text-sm leading-relaxed">
-          Kot investicija v delnice se vzamejo donosi S&P 500 Total Return(^SP500TR). To je ETF, ki že ima reinvestirane dividende. Ker gre za pasivno investiranje z enkratnim nakupom, v izračunu izpustimo strošeke posredniškega računa in morebitnih drugih stroškov saj so to le minoren znesek v primerjavi z celotno investicijo.
+          Kot investicija v delnice se upoštevajo donosi indeksa S&P 500 Total Return Index (^SP500TR). Gre za indeks, ki že vključuje reinvestirane dividende. Ker gre za pasivno investiranje z enkratnim nakupom, v izračunu izpustimo stroške posredniškega računa in morebitne druge stroške, saj predstavljajo le manjši znesek v primerjavi s celotno investicijo, hkrati je pa namen prikazati informativen izračun.
         </p>
         <p class="text-gray-500 text-sm leading-relaxed">
           Kako poteka izračun v ozadju? Če izberemo leto 2010, se potem vzame donos indeksa od decembra 2010 do danes (2026 april). Ta donos se nato pomnoži z zneskom, ki smo ga investirali.
@@ -43,15 +43,22 @@ import { Info, Calculator, Lightbulb, Home as HomeIcon } from 'lucide-vue-next'
           <h3 class="text-xl font-medium text-gray-900">Nepremičnine</h3>
         </div>
         <div class="text-gray-500 text-sm leading-relaxed">
-          <p>Investiranje v stanovanje pa je tako. </p>
-          <br>
-          <p>Glede na to koliko denarja smo investirali se izračuna koliko kvadratov stanovanja smo  lahko kupili za ta denar tistega leta - povprečnega rabljenega stanovanja v Ljubljani.</p>
-          <br>
-          <p>Potem pa se cena za kvadrat izračunava podobno kot pri investiranju v S&P 500. Kolikor je pač kvadratni meter pridobil v vseh letih. Glede najemnin se pa vzame 5% letno glede na vrednost stanovanje tistega leta. Torej če je stanovanje nekega leta vredno 200.000eur se vzame da je bila letna najemina takrat 10.000eur.</p>
-          <br>
-          <p>Pomembno je omeniti da smo v izračun spustili davke na najemnino ki znašajo cca 25% in morebitne obnove, za katere se priporoča upoštevati 0,5-1,5% letno glede na vrednost stanovanja tisto leto. </p>
-          <br>
-          <p>Zanimiv izračun bi pa tudi bil, če bi lahko zaslužene najemnine naprej investirali, tako kot se investira denar naprej samodejno pri investiranju v indeks. </p>
+          <p>Investiranje v stanovanje poteka na naslednji način.</p>
+            <br>
+
+            <p>Glede na višino začetne investicije se izračuna, koliko kvadratnih metrov povprečnega rabljenega stanovanja v Ljubljani bi lahko kupili za ta znesek v določenem letu.</p>
+
+            <br>
+
+            <p>Nato se vrednost investicije izračunava podobno kot pri investiranju v indeks, saj se upošteva rast vrednosti kvadratnega metra skozi posamezna leta. Pri najemninah pa se predpostavi 4 % letni donos glede na vrednost stanovanja v posameznem letu. Če je bilo stanovanje v določenem letu vredno 200.000 €, se tako predpostavi, da je letna najemnina znašala 10.000 €.</p>
+
+            <br>
+
+            <p>Pomembno je omeniti, da v izračun niso vključeni davki na najemnino, ki znašajo približno 25 %, prav tako pa niso upoštevani morebitni stroški obnove. Pri teh se običajno priporoča upoštevanje letnega stroška v višini 0,5–1,5 % vrednosti stanovanja v posameznem letu.</p>
+
+            <br>
+
+            <p>Zanimiv dodaten izračun bi bil tudi, če bi bilo mogoče prejete najemnine sproti reinvestirati, podobno kot se pri investiranju v indeks samodejno reinvestirajo dividende.</p>
         </div>
       </div>
     </div>
@@ -66,11 +73,12 @@ import { Info, Calculator, Lightbulb, Home as HomeIcon } from 'lucide-vue-next'
       <p class="text-gray-600 leading-relaxed text-sm">
         Vsi izračuni so informativne narave in temeljijo na zgodovinskih povprečjih. Točne izračune je praktično nemogoče izračunati. </p>
       
-      <p class="text-gray-600 leading-relaxed text-sm"> Investiranju v delnice je kar nekaj manjhnih stroškov, ki se precej razlikujejo glede na to katerega posredniak imamo.</p>
+      <p class="text-gray-600 leading-relaxed text-sm">
+        Pri investiranju v delnice nastane tudi nekaj manjših stroškov, ki se precej razlikujejo glede na to, katerega posrednika izberemo.
+      </p>
       
-        <p class="text-gray-600 leading-relaxed text-sm">
-        Pri investiranju v stanovanja je pa teh spremenljivk še več. Vseh stroškov pogodb, davkov, prenov... 
-
+      <p class="text-gray-600 leading-relaxed text-sm">
+        Pri investiranju v stanovanja pa je teh spremenljivk še več – od stroškov pogodb in davkov do vzdrževanja ter prenov.
       </p>
         
     </section>

@@ -30,7 +30,7 @@ const handleSubmit = async () => {
           Primerjajte svoje <span class="italic font-normal">investicije</span>
         </h1>
         <p class="text-gray-500 max-w-lg">
-          Vnesite podatke za hitro primerjavo med investiranjem v delniške sklade (ETF) in nepremičnine na podlagi realnih zgodovinskih podatkov.
+          Vnesite podatke za hitro primerjavo med investiranjem v ameriški indeks (ETF) S&P 500 na eni strani in na drugi strani v povprečno rabljeno stanovanje v Ljubljani. Vse temelji na podlagi realnih zgodovinskih podatkih.
         </p>
       </div>
 
@@ -114,7 +114,7 @@ const handleSubmit = async () => {
               <p class="text-xl font-light">{{ results.stanovanje.skupni_zasluzek.toLocaleString('sl-SI') }} €</p>
             </div>
             <p class="mt-4 text-[13px] text-gray-400 italic leading-relaxed">
-              *Za najemnino se upošteva 5 % vrednosti stanovanja tistega leta. Davki in morebitni stroški obnove še niso vključeni v izračun.
+              *Za najemnino se upošteva 4 % vrednosti stanovanja tistega leta. Davki in morebitni stroški obnove še niso vključeni v izračun.
             </p>
           </div>
          

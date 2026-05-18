@@ -1,3 +1,4 @@
+
 import json
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -14,6 +15,7 @@ app.add_middleware(
 
 @app.get("/")
 def read_root():
+    print("Hello World!")
     return {"message": "Živijo, svet! To je moj prvi FastAPI."}
 
 
@@ -37,6 +39,7 @@ def stanovanja_funkcija(katerega_leta, koliko_kesa):
     cena_stana_zdej = kupljena_kvadratura * cena_kvadrat_zdaj
 
     # koliko smo zasluzl po kvadratu
+    # kolk smo zasluzs = 300 000 - 150 000
     zasluzek = cena_stana_zdej - int(koliko_kesa)
     # procentualno kolk je kvadrat zrastu
     rast = (cena_stana_zdej / int(koliko_kesa) - 1) * 100
@@ -48,7 +51,7 @@ def stanovanja_funkcija(katerega_leta, koliko_kesa):
         if int(katerega_leta) < leto_num <= int(zadnje_leto):
             # vrednost stanovanja pomnozimo z 5%
             vrednost_stana_tega_leta = kupljena_kvadratura * leto_podatki['value']
-            najemnine_skupaj += vrednost_stana_tega_leta * 0.05
+            najemnine_skupaj += vrednost_stana_tega_leta * 0.04
 
     return {
         "tip": "STANOVANJE",

@@ -29,10 +29,9 @@
 
 
 
-    <footer class="w-full px-6 py-10 sm:py-12 border-t border-gray-200 bg-white/30">
-      <div class="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0 text-[10px] sm:text-xs text-gray-400 uppercase tracking-widest text-center sm:text-left">
-        <span>© 2024 Investicijski Kalkulator</span>
-        <span class="font-medium">Minimalističen dizajn (Vue.js)</span>
+    <footer class="w-full px-6 py-6 sm:py-8 border-t border-gray-200 bg-white/30">
+      <div class="max-w-4xl mx-auto flex justify-center items-center text-[10px] sm:text-xs text-gray-400 uppercase tracking-widest text-center">
+        <span>© 2026 Investicijski kalkulator. Vsi izračuni so informativne narave.</span>
       </div>
     </footer>
 
