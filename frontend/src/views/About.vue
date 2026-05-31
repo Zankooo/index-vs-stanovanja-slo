@@ -130,7 +130,15 @@ const podatki = [
         <h2 class="text-2xl font-light text-gray-900">Uporabljeni podatki</h2>
       </div>
       <p class="text-gray-600 leading-relaxed text-sm">
-        Spodaj so prikazani surovi zgodovinski podatki, ki se uporabljajo pri izračunih znotraj kalkulatorja. Stanovanja predstavljajo povprečno ceno rabljenega stanovanja na m² v Ljubljani.
+        Spodaj so prikazani surovi zgodovinski podatki, ki se uporabljajo pri izračunih znotraj kalkulatorja. Podatki za stanovanja so pridobljeni primarno iz 
+        <a href="https://www.e-prostor.gov.si/podrocja/trg-in-vrednosti-nepremicnin/trg-nepremicnin/" target="_blank" rel="noopener noreferrer" style="color: blue; text-decoration: underline;">
+            E-Prostor
+        </a>
+        <br>
+        Podatki za vrednosti indeksa S&P 500 TR pa so pridobljeni iz portala
+        <a href="https://finance.yahoo.com/quote/%5ESP500TR/history/?period1=568305000&period2=1780230324" target="_blank" rel="noopener noreferrer" style="color: blue; text-decoration: underline;">
+            Yahoo Finance
+        </a>
       </p>
       
       <div class="overflow-x-auto rounded-2xl border border-gray-100 max-h-96">
@@ -154,6 +162,6 @@ const podatki = [
 
     </section>
 
-    
+
   </div>
 </template>
