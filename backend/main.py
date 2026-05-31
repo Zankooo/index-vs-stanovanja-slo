@@ -44,14 +44,20 @@ def stanovanja_funkcija(katerega_leta, koliko_kesa):
     # procentualno kolk je kvadrat zrastu
     rast = (cena_stana_zdej / int(koliko_kesa) - 1) * 100
 
-    # najemnine: 5% od vrednosti kvadrata vsako leto
+    # najemnine: 4% od vrednosti kvadrata vsako leto
+    # Kupili smo decembra katerega_leta → to leto brez najemnine.
+    # Pobiramo od naslednjega leta do zadnjega leta.
+    # Zadnje leto (2026) = samo prvih 5 mesecev (5/12).
     najemnine_skupaj = 0
     for leto, leto_podatki in podatki.items():
         leto_num = int(leto)
         if int(katerega_leta) < leto_num <= int(zadnje_leto):
-            # vrednost stanovanja pomnozimo z 5%
             vrednost_stana_tega_leta = kupljena_kvadratura * leto_podatki['value']
-            najemnine_skupaj += vrednost_stana_tega_leta * 0.04
+            if leto_num == int(zadnje_leto):
+                # Zadnje leto: samo prvih 5 mesecev
+                najemnine_skupaj += vrednost_stana_tega_leta * 0.04 * (5 / 12)
+            else:
+                najemnine_skupaj += vrednost_stana_tega_leta * 0.04
 
     return {
         "tip": "STANOVANJE",
