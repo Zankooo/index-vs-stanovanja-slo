@@ -10,7 +10,8 @@ const loading = ref(false)
 const handleSubmit = async () => {
   loading.value = true
   try {
-    const response = await fetch(`http://127.0.0.1:8000/api/izracun?leto=${yearCount.value}&kes=${amount.value}`);
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+    const response = await fetch(`${apiUrl}/api/izracun?leto=${yearCount.value}&kes=${amount.value}`);
     const data = await response.json();
     results.value = data.rezultati;
   } 
@@ -30,13 +31,13 @@ const handleSubmit = async () => {
           Primerjajte svoje <span class="italic font-normal">investicije</span>
         </h1>
         <p class="text-gray-500 max-w-lg">
-          Vnesite podatke za hitro primerjavo med investiranjem v ameriški indeks (ETF) S&P 500 na eni strani in na drugi strani v povprečno rabljeno stanovanje v Ljubljani. Vse temelji na podlagi realnih zgodovinskih podatkih.
+          Vnesi podatke za hitro primerjavo med investiranjem v ameriški indeks (ETF) S&P 500 na eni strani in na drugi strani v povprečno rabljeno stanovanje v Ljubljani. Izračuni so narejeni od konca izbranega leta do meseca junija 2026. Vse temelji na podlagi realnih zgodovinskih podatkih.
         </p>
       </div>
 
       <form @submit.prevent="handleSubmit" class="grid grid-cols-1 md:grid-cols-3 gap-6 items-end bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
         <div class="space-y-2">
-          <label class="text-[10px] uppercase tracking-widest font-bold text-gray-400">Leto nakupa (od 1990)</label>
+          <label class="text-[10px] uppercase tracking-widest font-bold text-gray-400">Leto nakupa (1990-2025)</label>
           <input
             v-model="yearCount"
             type="number"
@@ -91,7 +92,7 @@ const handleSubmit = async () => {
                 <p class="text-sm font-medium text-gray-900">{{ results.stanovanje.kupljena_kvadratura }} m²</p>
               </div>
               <div class="p-4 bg-gray-50 rounded-2xl flex justify-between items-center">
-                <p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Rast cene</p>
+                <p class="text-[10px] uppercase tracking-widest text-gray-400 font-bold">Rast cene m²</p>
                 <p class="text-sm font-medium text-green-600">+{{ results.stanovanje.procentualna_rast_cene_stanovanja }}%</p>
               </div>
             </div>

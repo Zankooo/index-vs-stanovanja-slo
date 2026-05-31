@@ -1,5 +1,45 @@
 <script setup>
-import { Info, Calculator, Lightbulb, Home as HomeIcon } from 'lucide-vue-next'
+import { Info, Calculator, Lightbulb, Home as HomeIcon, Database } from 'lucide-vue-next'
+
+const podatki = [
+  { leto: 1990, sp500: 367, stanovanje: 900 },
+  { leto: 1991, sp500: 479, stanovanje: 950 },
+  { leto: 1992, sp500: 516, stanovanje: 1000 },
+  { leto: 1993, sp500: 568, stanovanje: 1050 },
+  { leto: 1994, sp500: 575, stanovanje: 1100 },
+  { leto: 1995, sp500: 792, stanovanje: 1200 },
+  { leto: 1996, sp500: 1034, stanovanje: 1250 },
+  { leto: 1997, sp500: 1298, stanovanje: 1300 },
+  { leto: 1998, sp500: 1670, stanovanje: 1350 },
+  { leto: 1999, sp500: 2021, stanovanje: 1400 },
+  { leto: 2000, sp500: 1837, stanovanje: 1450 },
+  { leto: 2001, sp500: 1618, stanovanje: 1500 },
+  { leto: 2002, sp500: 1261, stanovanje: 1600 },
+  { leto: 2003, sp500: 1622, stanovanje: 1700 },
+  { leto: 2004, sp500: 1799, stanovanje: 1850 },
+  { leto: 2005, sp500: 1887, stanovanje: 2000 },
+  { leto: 2006, sp500: 2186, stanovanje: 2300 },
+  { leto: 2007, sp500: 2306, stanovanje: 2700 },
+  { leto: 2008, sp500: 1452, stanovanje: 2660 },
+  { leto: 2009, sp500: 1837, stanovanje: 2390 },
+  { leto: 2010, sp500: 2117, stanovanje: 2420 },
+  { leto: 2011, sp500: 2158, stanovanje: 2440 },
+  { leto: 2012, sp500: 2504, stanovanje: 2320 },
+  { leto: 2013, sp500: 3315, stanovanje: 2080 },
+  { leto: 2014, sp500: 3769, stanovanje: 2020 },
+  { leto: 2015, sp500: 3821, stanovanje: 2040 },
+  { leto: 2016, sp500: 4278, stanovanje: 2180 },
+  { leto: 2017, sp500: 5212, stanovanje: 2410 },
+  { leto: 2018, sp500: 5478, stanovanje: 2770 },
+  { leto: 2019, sp500: 6553, stanovanje: 2800 },
+  { leto: 2020, sp500: 7759, stanovanje: 2960 },
+  { leto: 2021, sp500: 9986, stanovanje: 3591 },
+  { leto: 2022, sp500: 8178, stanovanje: 3935 },
+  { leto: 2023, sp500: 10327, stanovanje: 4268 },
+  { leto: 2024, sp500: 12991, stanovanje: 4237 },
+  { leto: 2025, sp500: 15220, stanovanje: 4783 },
+  { leto: 2026, sp500: 16935, stanovanje: 5000 },
+]
 </script>
 
 <template>
@@ -46,11 +86,11 @@ import { Info, Calculator, Lightbulb, Home as HomeIcon } from 'lucide-vue-next'
           <p>Investiranje v stanovanje poteka na naslednji način.</p>
             <br>
 
-            <p>Glede na višino začetne investicije se izračuna, koliko kvadratnih metrov povprečnega rabljenega stanovanja v Ljubljani bi lahko kupili za ta znesek v določenem letu.</p>
+            <p>Glede na višino začetne investicije se izračuna, koliko kvadratnih metrov povprečnega rabljenega stanovanja v Ljubljani bi lahko kupili za ta znesek ob koncu izbranega leta.</p>
 
             <br>
 
-            <p>Nato se vrednost investicije izračunava podobno kot pri investiranju v indeks, saj se upošteva rast vrednosti kvadratnega metra skozi posamezna leta. Pri najemninah pa se predpostavi 4 % letni donos glede na vrednost stanovanja v posameznem letu. Če je bilo stanovanje v določenem letu vredno 200.000 €, se tako predpostavi, da je letna najemnina znašala 10.000 €.</p>
+            <p>Nato se vrednost investicije izračunava podobno kot pri investiranju v indeks, saj se upošteva rast vrednosti kvadratnega metra skozi posamezna leta. Pri najemninah pa se predpostavi 4 % letni donos glede na vrednost stanovanja v posameznem letu. <i>Primer:</i> Če je bilo stanovanje v določenem letu vredno 200.000 €, se tako predpostavi, da je letna najemnina znašala 8.000 €.</p>
 
             <br>
 
@@ -78,9 +118,42 @@ import { Info, Calculator, Lightbulb, Home as HomeIcon } from 'lucide-vue-next'
       </p>
       
       <p class="text-gray-600 leading-relaxed text-sm">
-        Pri investiranju v stanovanja pa je teh spremenljivk še več – od stroškov pogodb in davkov do vzdrževanja ter prenov.
+        Pri investiranju v stanovanja pa je teh spremenljivk še več – od stroškov pogodb in davkov do vzdrževanja stanovanja...
       </p>
-        
     </section>
+        
+    <section class="bg-white p-10 rounded-[40px] shadow-sm border border-gray-100 space-y-6">
+      <div class="flex items-center gap-3">
+        <div class="p-2 bg-purple-50 rounded-xl">
+          <Database class="text-purple-600 w-6 h-6" />
+        </div>
+        <h2 class="text-2xl font-light text-gray-900">Uporabljeni podatki</h2>
+      </div>
+      <p class="text-gray-600 leading-relaxed text-sm">
+        Spodaj so prikazani surovi zgodovinski podatki, ki se uporabljajo pri izračunih znotraj kalkulatorja. Stanovanja predstavljajo povprečno ceno rabljenega stanovanja na m² v Ljubljani.
+      </p>
+      
+      <div class="overflow-x-auto rounded-2xl border border-gray-100 max-h-96">
+        <table class="w-full text-sm text-left table-fixed">
+          <thead class="text-xs text-gray-500 uppercase bg-gray-50 sticky top-0">
+            <tr>
+              <th scope="col" class="w-1/3 px-6 py-4 font-medium">Leto</th>
+              <th scope="col" class="w-1/3 px-6 py-4 font-medium text-center">S&P 500 TR</th>
+              <th scope="col" class="w-1/3 px-6 py-4 font-medium text-right">Stanovanje (m²)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr v-for="vrstica in podatki" :key="vrstica.leto" class="hover:bg-gray-50/50 transition-colors">
+              <td class="px-6 py-4 text-gray-900 font-medium">{{ vrstica.leto }}</td>
+              <td class="px-6 py-4 text-gray-600 text-center">{{ vrstica.sp500 }}</td>
+              <td class="px-6 py-4 text-gray-600 text-right">{{ vrstica.stanovanje }} €</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+
+    
   </div>
 </template>

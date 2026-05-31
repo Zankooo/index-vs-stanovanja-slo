@@ -10,6 +10,7 @@
         <nav class="flex gap-6 sm:gap-8 text-[10px] sm:text-sm font-medium uppercase tracking-widest">
           <router-link to="/" class="hover:opacity-60 transition-opacity" active-class="text-black">Domov</router-link>
           <router-link to="/about" class="hover:opacity-60 transition-opacity" active-class="text-black">O projektu</router-link>
+          <router-link to="/feedback" class="hover:opacity-60 transition-opacity" active-class="text-black">Predlogi</router-link>
         </nav>
       </div>
     </header>
