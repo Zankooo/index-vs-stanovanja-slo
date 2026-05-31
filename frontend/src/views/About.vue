@@ -70,7 +70,7 @@ const podatki = [
           Kot investicija v delnice se upoštevajo donosi indeksa S&P 500 Total Return Index (^SP500TR). Gre za indeks, ki že vključuje reinvestirane dividende. Ker gre za pasivno investiranje z enkratnim nakupom, v izračunu izpustimo stroške posredniškega računa in morebitne druge stroške, saj predstavljajo le manjši znesek v primerjavi s celotno investicijo, hkrati je pa namen prikazati informativen izračun.
         </p>
         <p class="text-gray-500 text-sm leading-relaxed">
-          Kako poteka izračun v ozadju? Če izberemo leto 2010, se potem vzame donos indeksa od decembra 2010 do danes (2026 april). Ta donos se nato pomnoži z zneskom, ki smo ga investirali.
+          Kako poteka izračun v ozadju? Če izberemo leto 2010, se potem vzame donos indeksa od decembra 2010 do danes (junij 2026). Ta donos se nato pomnoži z zneskom, ki smo ga investirali.
         </p>
       </div>
 
