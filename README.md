@@ -1,57 +1,58 @@
-# Primerjava: Delnice (S&P 500) vs. Stanovanja
+# Comparison: Stocks (S&P 500) vs. Real Estate
 
-Aplikacija za primerjavo donosnosti investicij v nepremičnine (stanovanja v Ljubljani) in delniški indeks S&P 500 skozi leta.
+[🇸🇮 Preberi v slovenščini](./slo-readme/README.md)
 
-## Navodila za zagon
+An application for comparing the investment returns of real estate (apartments in Ljubljana) and the S&P 500 stock index from a selected year to the present day.
 
-Projekt je razdeljen na dva dela: **Backend** (FastAPI) in **Frontend** (Vue.js + Vite).
+## 🌐 Live Website
 
----
+https://index-vs-stanovanja-slo.vercel.app/
+
+## Running the Project Locally
+
+The project is divided into two parts: **Backend** (FastAPI) and **Frontend** (Vue.js + Vite).
 
 ### 1. Backend (FastAPI)
 
-Backend skrbi za izračune in serviranje podatkov iz JSON datotek.
+The backend handles calculations and serves data from JSON files.
 
-1.  Pojdi v mapo `backend`:
+1. Navigate to the `backend` directory:
+
     ```bash
     cd backend
     ```
-2.  Ustvari in aktiviraj virtualno okolje:
+2. Create and activate a virtual environment:
     ```bash
     python -m venv .venv
-    # Na macOS/Linux:
+    # On macOS/Linux:
     source .venv/bin/activate
-    # Na Windows:
+    # On Windows:
     .venv\Scripts\activate
     ```
-3.  Namesti potrebne knjižnice:
+3. Install the required dependencies:
     ```bash
     pip install -r requirements.txt
     ```
-4.  Zaženi strežnik:
+4. Start the server:
     ```bash
     uvicorn main:app --reload
     ```
-    Backend bo dosegljiv na: `http://127.0.0.1:8000`
+    The backend will be available at: `http://127.0.0.1:8000`
 
----
 
 ### 2. Frontend (Vue.js + Vite)
 
-Frontend poskrbi za uporabniški vmesnik in vizualizacijo podatkov.
 
-1.  Pojdi v mapo `frontend`:
+1.  Navigate to folder `frontend`:
     ```bash
     cd frontend
     ```
-2.  Namesti pakete (Node.js mora biti nameščen):
+2.  Install dependencies (Node.js mora biti nameščen):
     ```bash
     npm install
     ```
-3.  Zaženi razvojni strežnik:
+3.  Run development server:
     ```bash
     npm run dev
     ```
-    Frontend bo dosegljiv na: `http://localhost:3001` (kot je nastavljeno v `package.json`)
-
----
+    Frontend will be available on: `http://localhost:3001` (is set in file `package.json`)
