@@ -38,7 +38,7 @@ const podatki = [
   { leto: 2023, sp500: 10327, stanovanje: 4268 },
   { leto: 2024, sp500: 12991, stanovanje: 4237 },
   { leto: 2025, sp500: 15220, stanovanje: 4783 },
-  { leto: 2026, sp500: 16935, stanovanje: 5000 },
+  { leto: 2026, sp500: 16600, stanovanje: 5600 },
 ]
 </script>
 
@@ -70,7 +70,7 @@ const podatki = [
           Kot investicija v delnice se upoštevajo donosi indeksa S&P 500 Total Return Index (^SP500TR). Gre za indeks, ki že vključuje reinvestirane dividende. Ker gre za pasivno investiranje z enkratnim nakupom, v izračunu izpustimo stroške posredniškega računa in morebitne druge stroške, saj predstavljajo le manjši znesek v primerjavi s celotno investicijo, hkrati je pa namen prikazati informativen izračun.
         </p>
         <p class="text-gray-500 text-sm leading-relaxed">
-          Kako poteka izračun v ozadju? Če izberemo leto 2010, se potem vzame donos indeksa od decembra 2010 do danes (junij 2026). Ta donos se nato pomnoži z zneskom, ki smo ga investirali.
+          Kako poteka izračun v ozadju? Če izberemo leto 2010, se potem vzame donos indeksa od decembra 2010 do danes. Ta donos se nato pomnoži z zneskom, ki smo ga investirali.
         </p>
       </div>
 
