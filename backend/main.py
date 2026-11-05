@@ -1,7 +1,10 @@
 
 import json
+from pathlib import Path
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
+DATA_DIR = Path(__file__).resolve().parent
 
 app = FastAPI()
 
@@ -21,7 +24,7 @@ def read_root():
 
 def stanovanja_funkcija(katerega_leta, koliko_kesa):
     katerega_leta = str(katerega_leta)
-    with open('cene-stanovanj.json') as datoteka:
+    with (DATA_DIR / 'cene-stanovanj.json').open(encoding='utf-8') as datoteka:
         podatki = json.load(datoteka)
 
     if katerega_leta not in podatki:
@@ -76,7 +79,7 @@ def stanovanja_funkcija(katerega_leta, koliko_kesa):
 
 def indeks_funkcija(katerega_leta, koliko_kesa):
     katerega_leta = str(katerega_leta)
-    with open('sp500tr.json') as datoteka:
+    with (DATA_DIR / 'sp500tr.json').open(encoding='utf-8') as datoteka:
         podatki = json.load(datoteka)
 
     if katerega_leta not in podatki:
