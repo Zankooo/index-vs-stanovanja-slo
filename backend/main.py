@@ -56,11 +56,7 @@ def stanovanja_funkcija(katerega_leta, koliko_kesa):
         leto_num = int(leto)
         if int(katerega_leta) < leto_num <= int(zadnje_leto):
             vrednost_stana_tega_leta = kupljena_kvadratura * leto_podatki['value']
-            if leto_num == int(zadnje_leto):
-                # Zadnje leto: samo prvih 5 mesecev
-                najemnine_skupaj += vrednost_stana_tega_leta * 0.04 * (5 / 12)
-            else:
-                najemnine_skupaj += vrednost_stana_tega_leta * 0.04
+            najemnine_skupaj += vrednost_stana_tega_leta * 0.04
 
     return {
         "tip": "STANOVANJE",
