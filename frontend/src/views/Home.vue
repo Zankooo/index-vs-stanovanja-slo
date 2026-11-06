@@ -6,17 +6,25 @@ const yearCount = ref('')
 const amount = ref('')
 const results = ref(null)
 const loading = ref(false)
+const error = ref('')
+
+const apiUrl = (import.meta.env.VITE_API_URL?.trim() ||
+  (import.meta.env.DEV ? 'http://127.0.0.1:8000' : '')).replace(/\/+$/, '')
 
 const handleSubmit = async () => {
   loading.value = true
+  error.value = ''
+  results.value = null
   try {
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+    if (!apiUrl) throw new Error('Missing API URL');
     const response = await fetch(`${apiUrl}/api/izracun?leto=${yearCount.value}&kes=${amount.value}`);
+    if (!response.ok) throw new Error(`Calculation request failed: ${response.status}`);
     const data = await response.json();
     results.value = data.rezultati;
   } 
   catch (err) {
     console.error("Calculation failed", err);
+    error.value = 'Izračun trenutno ni na voljo. Poskusite znova pozneje.';
   } finally {
       loading.value = false;
   }
@@ -67,6 +75,7 @@ const handleSubmit = async () => {
           <ArrowRight v-if="!loading" class="w-4 h-4" />
         </button>
       </form>
+      <p v-if="error" role="alert" class="text-sm text-red-600">{{ error }}</p>
     </section>
 
     <transition name="fade">
